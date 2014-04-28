@@ -123,7 +123,7 @@ class Task:
 
     def setStatus(self, value):
         if type(value) is int:
-            self._data['status']
+            self._data['status'] = value
         else:
             raise TaskIllegalStatusException(value)
 
@@ -132,7 +132,7 @@ class Task:
 
     def setPriority(self, value):
         if type(value) is float:
-            self._data['priority']
+            self._data['priority'] = value
         else:
             raise TaskIllegalPriorityException(value)
 
@@ -141,7 +141,7 @@ class Task:
 
     def setEffort(self, value):
         if type(value) is float:
-            self._data['priority']
+            self._data['priority'] = value
         else:
             raise TaskIllegalEffortException(value)
 

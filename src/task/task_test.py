@@ -37,7 +37,10 @@ class TestTaskLoading(unittest.TestCase):
         self.tsk.setDateAccepted(datetime(2014, 04, 01))
         self.tsk.setDateCompleted("2014-05-01")
 
-
+    def test_setter_errors(self):
+        self.assertRaises(task.TaskIllegalPriorityException, self.tsk.setPriority('a'))
+        self.tsk.setPriority(1.0)
+        self.assertAlmostEqual(self.tsk.getPriority(), 1.0)
 
 
 if __name__ == '__main__':
